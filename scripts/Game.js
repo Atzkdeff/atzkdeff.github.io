@@ -128,7 +128,7 @@ function update() {
 
     if (!friendShip.exists || !enemy.exists) {
 
-        stateText.text = "Rrrround!!1111";
+        stateText.text = "Rrrround!!1111 \n Just click for next...";
         stateText.visible = true;
 
         game.input.onTap.addOnce(restart,this);
@@ -321,8 +321,6 @@ function collisionHandler (alien, bullet) {
     bullet.kill();
     alien.health -= bullet.damage;
 
-    blowUp(alien,bullet);
-
     if (alien.health <= 0)
     {
         alien.exists ? alien.numOfDeath++ : null;
@@ -334,6 +332,7 @@ function collisionHandler (alien, bullet) {
         scoreFriend.text = enemy.numOfDeath;
     }
 
+    blowUp(alien,bullet);
 }
 
 function createMeteor(img) {
